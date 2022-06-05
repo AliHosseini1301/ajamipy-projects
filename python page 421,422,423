@@ -1,0 +1,184 @@
+#1-How are tuples different from lists? 
+The key difference between the tuples and lists is that while the
+tuples are immutable objects . the lists are mutable.
+This means that tuples cannot be changed while the lists can be modified
+Tuples are more memory efficient than the lists.
+
+#2- How do tuples support the indexing operation ([]) differently from lists?
+The [:] syntax works for lists & tuples. However,just there is an important difference
+between how this operation works with a list and how it works with a string.
+
+#3- Are tuples mutable or immutable?
+tuples are immutable
+
+#4-Are the elements in tuples ordered or unordered?
+Tuple is stored as a sequence of its elements in memory.
+always ordered Like array are also always ordered
+
+#5-Rewrite the last assignment statement in the following interactive sequence
+so that it behaves identi-cally but uses tuple unpacking instead of tuple slicing.
+>>> a = 1, 2, 3, 4, 5, 6, 7, 8
+>>> a
+(1, 2, 3, 4, 5, 6, 7, 8)
+>>> s = a[2:6]
+>>> s
+(3, 4, 5, 6)
+-----
+answer:
+a = 1, 2, 3, 4, 5, 6, 7, 8
+(one , two , three , forr , five , six , seven , eight) = a
+print(three,forr,five,six)
+
+#6-Rewrite the last assignment statement in the following interactive sequence
+so that it behaves identically but uses tuple slicing instead of tuple unpacking.
+>>> a = 1, 2, 3, 4, 5, 6, 7, 8
+>>> a
+(1, 2, 3, 4, 5, 6, 7, 8)
+>>> s = _, _, _, *s, _ = a
+>>> s = tuple(s)
+>>> s
+(4, 5, 6, 7)
+
+answer:
+a = 1, 2, 3, 4, 5, 6, 7, 8
+s = a[3:7]
+
+#7- Consider the tuple tpl defined as
+tpl = 7, 10, -3, 18, 6, 10
+Provide one assignment statement that uses tuple unpacking to assign x to
+the first element and y to the last element.
+tpl = 7, 10, -3, 18, 6, 10
+(x,ten,three,eighteen,six,y) = tpl
+print(x)
+print(y)
+
+#8- Write a function named product that computes the product of 
+any number of floating-point arguments; for example, the call 
+product(2.5, 2, 10.0) would evaluate to 50.0. The function should
+return 1 (the identity element for multiplication) if the caller passes no arguments.
+answer:
+def product_number(tpl):
+    a = 1
+    for i in tpl:
+        a = a*i
+
+    return a
+
+
+tpl = (2.5, 2, 10.0)
+answer = product_number(tpl)
+print(answer)
+
+#9-Write a function named zero_sum that accepts any number of integer arguments. The function
+should return True if the sum of its arguments is zero; otherwise,
+it should return False. The call
+zero_sum(2, 3, -5), for example, would evaluate to True, since 2 + 3 + −5 = 0. On the other
+hand, zero_sum(2, 3, -10, 4) evaluates to False because 2 + 3 + − 10 + 4 = − 1 6= 0.
+zero_sum should return True when called with no arguments.
+answer:
+def zero_sum(tpl):
+    a = 0
+    for i in tpl:
+        a = a+i
+    if a ==0:
+        return True
+    elif a!=0:
+        return False
+    else:
+        return True
+
+    
+tpl = (2, 3, -5)
+answer = zero_sum(tpl)
+print(answer)
+#10-Why is a dictionary considered an associative container?
+because it associates a key with an item
+The keys behave in a way similar to indices in an array
+except that array indices are numeric and keys are arbitrary strings
+
+#11-What statement assigns an empty dictionary to a variable named d?
+d = dict()
+#12-If d refers to a dictionary, what expression represents
+the value associated with the key "Fred"?
+d = dict({'Fred':'name'})
+print(d['Fred'])
+#13-What happens when an executing program attempts to 
+retrieve a value using a key that is not present
+in the dictionary?
+Traceback (most recent call last):
+  File 
+KeyError: 'unexcited Key name'
+#14-What happens when an executing program attempts
+to associate a value with a key that is not present
+in the dictionary?
+Traceback (most recent call last):
+  File 
+KeyError: 'unexcited Key name'
+#15-Are dictionaries mutable or immutable?
+mutable
+#16- Given the following dictionary:
+d = {3:0, 5:1, 10:1, 8:2, 15:4}
+Indicate what each of the following code fragments will print:
+(a) print(d) =====> {3: 0, 5: 1, 10: 1, 8: 2, 15: 4}
+
+(b) for x in d:
+print(x) =====>
+3
+5
+10
+8
+15
+(c) for x in d.keys():
+print(x) =====>
+3
+5
+10
+8
+15
+(d) for x in d.values():
+print(x) =====>
+0
+1
+1
+2
+4
+#17-Are the elements in dictionaries ordered or unordered?
+A dictionary is a collection which is ordered
+changeable and do not allow duplicates. As of Python version 3.7
+dictionaries are ordered. 
+In Python 3.6 and earlier dictionaries are unordered
+#18-Modify Listing 9.14 (tkinterlight.py) 
+so that it models a light with a single on/off yellow lamp.
+answer : in python file Exercise18-P422.py
+#20-20. Explain why the statement:
+A = {}
+does not create an empty set?
+becuse The contents of sets (and the keys of dictionaries) can only be immutable values.
+ That means that their contents can't change. If we are using a regular set
+we must use A = set()
+#21- Provide the Python statement that assigns the variable A to the empty set.
+answer:
+i = set()
+i.add('A')
+print(i)
+#22-Are sets mutable or immutable?
+Sets are mutable
+#23-Given the following initialization statements:
+A = {20, 19, 2, 10, 7}
+B = {4, 10, 5, 6, 9, 7}
+C = {10, 19}
+evaluate the following expressions:
+(a) A ======> {2, 19, 20, 7, 10}
+(b) 20 in A ======> True
+(c) 20 not in A ======> False
+(d) A & B ======> {10, 7}
+(e) A | B ======> {2, 4, 5, 6, 7, 9, 10, 19, 20}
+(f) C < A ======> True
+(g) C <= A ======> True
+(h) C <= B ======> False
+(i) A <= A ======> True
+(j) A < A ======> False
+(k) len(A) ======> 5
+(l) {x + 2 for x in range(10)} ======> {2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
+(m) {x - 2 for x in A} ======> {0, 5, 8, 17, 18}
+(n) {x - 2 for x in A if x < 10} ======> {0, 5}
